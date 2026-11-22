@@ -1,29 +1,21 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import {
-  useMediaQuery,
   useTheme,
   AppBar,
   Toolbar,
   Box,
   Typography,
-  InputBase,
   Button,
   IconButton,
   Badge,
-  Link,
   Stack,
-  Divider,
-  Paper,
 } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
-import CameraAltOutlinedIcon from "@mui/icons-material/CameraAltOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-import MenuIcon from "@mui/icons-material/Menu";
-import {SearchBar} from "./SearchBar";
-import {Row2} from "./Row2";
+import { SearchBar } from "./SearchBar";
+import { Row2 } from "./Row2";
 import { useIsTabletOrMobile } from "../../../../resposiveHook/useResponsive";
 
 const ORANGE = "#ff6a00";
@@ -32,19 +24,14 @@ const border = "1px solid #e70202";
 const Navbar = () => {
   const navigate = useNavigate();
   const theme = useTheme();
-  //  const isTabletOrMobile = useMediaQuery(theme.breakpoints.down("md"));
-  // const isLaptopOrMore = useMediaQuery(theme.breakpoints.up("lg"));
 
   return (
     <AppBar
       position="sticky"
       elevation={0}
       sx={{
-        // bgcolor: "rgb(255, 244, 236)",
-        color: "#222",
-            background: `linear-gradient(to left, rgb(255, 244, 236) 50%,  rgb(61, 108, 159)500%)`,
-
-         
+         color: "#222",
+        background: `linear-gradient(to left, rgb(255, 244, 236) 50%,  rgb(61, 108, 159)500%)`,
       }}
     >
       {/* first row*/}
@@ -68,15 +55,16 @@ const Navbar = () => {
         </Typography>
 
         {/* search bar */}
-        <SearchBar  />
-        <Box sx={{ flexGrow: 1, display: { xs: "none", md: "none" ,lg:"block"} }}></Box>
+        <SearchBar />
+        <Box
+          sx={{ flexGrow: 1, display: { xs: "none", md: "none", lg: "block" } }}
+        ></Box>
 
         {/* Country, Language, and Currency */}
         {!useIsTabletOrMobile() && (
-           <>
+          <>
             <Stack
               direction="row"
-              
               spacing={0.5}
               sx={{
                 fontSize: 13,
@@ -144,15 +132,12 @@ const Navbar = () => {
               Create account
             </Button>
           </>
-         
-         
         )}
       </Toolbar>
 
       {/*  second row */}
-     
-      {!useIsTabletOrMobile()&& <Row2 />}
-      
+
+      {!useIsTabletOrMobile() && <Row2 />}
     </AppBar>
   );
 };
