@@ -6,12 +6,14 @@ import { Typography } from "@mui/material";
 import CheckRoundedIcon from "@mui/icons-material/CheckRounded";
 import { Stack } from "@mui/material";
 import HeaderTwo from "../../components/home/header/header2/HeaderTwo.jsx";
+import Categories from "../../components/home/categoriesProduct/Categories.jsx";
 
 const border = "1px solid red";
 export default function Home() {
   return (
     <Box>
       {!useIsTabletOrMobile() && (
+        <>
         <Box
           sx={{
             height: "200px",
@@ -41,10 +43,12 @@ export default function Home() {
             <SearchBar isHome={true} />
           </Box>
         </Box>
-      )}
+     
 
-      {!useIsTabletOrMobile() && <HeaderTwo />}
-      
+       <HeaderTwo />
+   
+        <Categories /> </> 
+      )}
     </Box>
   );
 }
