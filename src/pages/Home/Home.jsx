@@ -1,11 +1,11 @@
 import React from "react";
-import { SearchBar } from "../../components/header/NavBar/SearchBar.jsx";
+import { SearchBar } from "../../components/home/header/NavBar/SearchBar.jsx";
 import { Box, Divider } from "@mui/material";
 import { useIsTabletOrMobile } from "../../resposiveHook/useResponsive";
 import { Typography } from "@mui/material";
 import CheckRoundedIcon from "@mui/icons-material/CheckRounded";
 import { Stack } from "@mui/material";
-import HeaderTwo from "../../components/header/header2/HeaderTwo";
+import HeaderTwo from "../../components/home/header/header2/HeaderTwo.jsx";
 
 const border = "1px solid red";
 export default function Home() {
@@ -44,6 +44,7 @@ export default function Home() {
       )}
 
       {!useIsTabletOrMobile() && <HeaderTwo />}
+      
     </Box>
   );
 }

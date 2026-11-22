@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { Box } from "@mui/material";
-import Navbar from "./components/header/NavBar/Navbar.jsx";
+import Navbar from "./components/home/header/NavBar/Navbar.js";
 
 function App() {
   return (
