@@ -24,7 +24,7 @@ import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import MenuIcon from "@mui/icons-material/Menu";
 import {SearchBar} from "./SearchBar";
 import {Row2} from "./Row2";
-import { useIsTabletOrMobile } from "../../../resposiveHook/useResponsive";
+import { useIsTabletOrMobile } from "../../../../resposiveHook/useResponsive";
 
 const ORANGE = "#ff6a00";
 const border = "1px solid #e70202";

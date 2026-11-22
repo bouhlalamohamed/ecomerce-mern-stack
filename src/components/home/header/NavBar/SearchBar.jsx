@@ -5,7 +5,7 @@ import { useState } from "react";
 import {
   useIsTabletOrMobile,
   useIsLaptopOrMore,
-} from "../../../resposiveHook/useResponsive";
+} from "../../../../resposiveHook/useResponsive";
 const ORANGE = "#ff6a00";
 
 export const SearchBar = ({ isHome = false }) => {
