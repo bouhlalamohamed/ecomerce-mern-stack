@@ -1,9 +1,12 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Toolbar, Box, Typography, Link, Stack } from "@mui/material";
 
 import MenuIcon from "@mui/icons-material/Menu";
+import { setShowCategories } from "../../../../store/showCategoriesSlice";
 
 export const Row2 = () => {
+  const dispatch = useDispatch();
   return (
     <div>
       <Toolbar variant="dense" sx={{ gap: 3, fontSize: 13, minHeight: 40 }}>
@@ -13,7 +16,11 @@ export const Row2 = () => {
           sx={{ cursor: "pointer", fontWeight: 600, alignItems: "center" }}
         >
           <MenuIcon fontSize="small" />
-          <Typography variant="body2" fontWeight={600}>
+          <Typography
+            variant="body2"
+            fontWeight={600}
+            onClick={() => dispatch(setShowCategories(true))}
+          >
             All categories
           </Typography>
         </Stack>
