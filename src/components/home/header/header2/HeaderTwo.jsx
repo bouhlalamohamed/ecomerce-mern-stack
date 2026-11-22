@@ -2,7 +2,7 @@
 
 import { Box, Divider, Typography } from "@mui/material";
 import CheckRoundedIcon from "@mui/icons-material/CheckRounded";
-
+import { Fragment } from "react";
 export default function HeaderTwo() {
   return (
     <> <Box
@@ -15,7 +15,7 @@ export default function HeaderTwo() {
         }}
       >
         {[1, 2, 3].map((item, index) => (
-          <>
+          <Fragment key={index}>
             <Box
               sx={{
                 display: "flex",
@@ -23,6 +23,7 @@ export default function HeaderTwo() {
                 gap: "12px",
                 maxWidth: "420px",
               }}
+              key={item}
             >
               <CheckRoundedIcon
                 sx={{
@@ -56,7 +57,7 @@ export default function HeaderTwo() {
               </Box>
             </Box>
             {index < 2 && <Divider orientation="vertical" flexItem />}
-          </>
+          </Fragment>
         ))}
       </Box></>
   )
