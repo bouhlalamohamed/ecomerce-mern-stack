@@ -1,0 +1,49 @@
+import React from "react";
+import { SearchBar } from "../../components/header/NavBar/SearchBar.jsx";
+import { Box, Divider } from "@mui/material";
+import { useIsTabletOrMobile } from "../../resposiveHook/useResponsive";
+import { Typography } from "@mui/material";
+import CheckRoundedIcon from "@mui/icons-material/CheckRounded";
+import { Stack } from "@mui/material";
+import HeaderTwo from "../../components/header/header2/HeaderTwo";
+
+const border = "1px solid red";
+export default function Home() {
+  return (
+    <Box>
+      {!useIsTabletOrMobile() && (
+        <Box
+          sx={{
+            height: "200px",
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: 2,
+            background: `linear-gradient(to left, rgb(255, 244, 236) 50%, rgb(61, 108, 159)500%)`,
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "space-around",
+              gap: 3,
+            }}
+          >
+            <Typography variant="h4">Product</Typography>
+            <Typography variant="h4">Manufacturers</Typography>
+            <Typography variant="h4">Worldwide</Typography>
+          </Box>
+          <Box
+            sx={{ width: "100%", display: "flex", justifyContent: "center" }}
+          >
+            <SearchBar isHome={true} />
+          </Box>
+        </Box>
+      )}
+
+      {!useIsTabletOrMobile() && <HeaderTwo />}
+    </Box>
+  );
+}
