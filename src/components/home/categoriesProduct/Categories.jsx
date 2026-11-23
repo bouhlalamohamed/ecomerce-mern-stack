@@ -58,7 +58,7 @@ export default function Categories() {
         inset: 0, // تغطي الشاشة كاملة
         backdropFilter: "blur(4px)",
         WebkitBackdropFilter: "blur(8px)", // لـ Safari
-        zIndex: 0,
+        zIndex: 100,
           
       }}
     >
